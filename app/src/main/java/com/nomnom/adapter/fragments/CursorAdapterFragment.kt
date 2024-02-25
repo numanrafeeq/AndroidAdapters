@@ -1,0 +1,42 @@
+package com.nomnom.adapter.fragments
+
+import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import com.nomnom.adapter.R
+import android.view.ViewGroup
+import android.widget.SimpleAdapter
+import androidx.navigation.fragment.findNavController
+import com.nomnom.adapter.base.BaseFragment
+import com.nomnom.adapter.databinding.FragmentFirstBinding
+import com.nomnom.adapter.model.AdapterItem
+
+/**
+ * A simple [Fragment] subclass as the default destination in the navigation.
+ */
+class CursorAdapterFragment : BaseFragment<FragmentFirstBinding>(R.layout.fragment_first) {
+
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        
+    }
+
+    companion object {
+        private const val ARG_JSON_DATA = "json_data"
+
+        fun newInstance(jsonData: String): ArrayAdapterFragment {
+            val fragment = ArrayAdapterFragment()
+            val args = Bundle().apply {
+                putString(ARG_JSON_DATA, jsonData)
+            }
+            fragment.arguments = args
+            return fragment
+        }
+    }
+
+    
+
+}
